@@ -230,6 +230,17 @@ public class CSE360_HW4 extends Application {
     
     private void patientLogin() {
     	Button login = new Button(); 
+    	Label prompt = new Label("Patient ID:");
+    	TextArea patientIDText = new TextArea(); 
+    	
+    	subVPane.getChildren().add(prompt);
+    	subVPane.getChildren().add(patientIDText);
+    	
+    	mainVPane.getChildren().add(subVPane);
+    	mainVPane.getChildren().add(login);
+    	
+    	mainPane.getChildren().add(mainGridPane);
+    	mainPane.setAlignment(Pos.CENTER_LEFT);
     	
     	login.setOnAction(new EventHandler<>() {
     		public void handle(ActionEvent event) {
@@ -303,4 +314,8 @@ public class CSE360_HW4 extends Application {
     		}
     	});
     }
+    
+    private boolean patientExists(String givenID) {
+  		File patientFile = new File(givenID + "")
+  	}
 }
